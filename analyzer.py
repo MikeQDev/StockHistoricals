@@ -9,5 +9,5 @@ with open('something') as infile:
        continue
      ratio = float(cur)/float(low)
      diff = float(cur) - float(low)
-     print line.split('\t')[0].split(':')[1]+"\t"+str(ratio)+"\t"+str(cur)+"\t"+str(low).strip()+"\t"+str(diff)
+     print line.split('\t')[0].split(':')[1]+","+str(ratio)+","+str(cur)+","+str(low).strip()+","+str(diff)
      #print cur + "," + low
