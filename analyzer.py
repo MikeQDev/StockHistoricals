@@ -1,6 +1,15 @@
 #!/usr/bin/python
+
+if len(sys.argv) != 2:
+  print "usage: python "+sys.argv[0]+" scrapedPrices.csv"
+  exit()
+else:
+  print sys.argv[1]
+
+
 print "\tcur:low ratio\tcurPrice\tlow\tdiff"
-with open('something') as infile:
+
+with open(sys.argv[1]) as infile:
    for line in infile:
      split = line.split('\t')[1].split(',')
      cur = split[0]
