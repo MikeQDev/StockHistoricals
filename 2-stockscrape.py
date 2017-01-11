@@ -5,17 +5,18 @@ import json
 import sys
 
 if len(sys.argv) != 2:
-  print "usage: python "+sys.argv[0]+" inCompanyListFile.csv"
+  print "usage: python "+sys.argv[0]+" tickerlist.txt"
   exit()
 
 URL = "http://chart.finance.yahoo.com/table.csv?a=10&b=23&c=2010&d=10&e=23&f=2016&g=m&ignore=.csv"
 STOCK_LIST = ['CAPR','A','QQQ','T','GCO','UTX','CI']#,'B','C']
+errorCount = 0
+print "opening file!"
 for line in open(sys.argv[1],'r').readlines():
   STOCK_LIST.append(line[:-1])
 print 'Loaded '+str(len(STOCK_LIST))+" symbols!"
-# open file
 #print(STOCK_LIST)
-myFile = open('something','w+')
+myFile = open('base-data.csv','w+')
 index = 0
 print 'curPrice,lowest'
 # csv columns: date (0), open (1), high (2), low (3), close (4), volume (5), adj close (6)
@@ -33,7 +34,7 @@ for ticker in STOCK_LIST:
     try:
       low = float(row[3])
     except:
-      print "lol"
+      errorCount = errorCount+1
       #print "Issue getting price for "+ticker+"! Continuing onto next..."
     if low < histLowest:
       histLowest = low

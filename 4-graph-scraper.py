@@ -2,6 +2,7 @@
 import csv
 import sys
 import urllib
+import os
 
 if len(sys.argv) != 2:
   print "usage: python "+sys.argv[0]+" analyzed-ratio-sorted.csv"
@@ -17,6 +18,8 @@ with open(sys.argv[1],'rb') as csvfile:
  
 
 _BASE_URL_ = "https://www.google.com/finance/getchart?x=NASD&p=40Y&i=604800&ei=J092WJCaO4HRjAH27rbYBA&q="
+if not os.path.exists('graphs/'):
+    os.makedirs('graphs/')
 i = 0;
 with open(sys.argv[1],'rb') as csvfile:
   reader = csv.reader(csvfile)

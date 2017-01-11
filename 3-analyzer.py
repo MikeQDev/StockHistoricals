@@ -2,7 +2,7 @@
 import sys
 
 if len(sys.argv) != 2:
-  print "usage: python "+sys.argv[0]+" scrapedPrices.csv"
+  print "usage: python "+sys.argv[0]+" base-data.csv"
   exit()
 
 
