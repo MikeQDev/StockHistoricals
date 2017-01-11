@@ -1,10 +1,9 @@
 #!/usr/bin/python
+import sys
 
 if len(sys.argv) != 2:
   print "usage: python "+sys.argv[0]+" scrapedPrices.csv"
   exit()
-else:
-  print sys.argv[1]
 
 
 print "\tcur:low ratio\tcurPrice\tlow\tdiff"

@@ -6,8 +6,6 @@ import urllib
 if len(sys.argv) != 2:
   print "usage: python "+sys.argv[0]+" analyzed-ratio-sorted.csv"
   exit()
-else:
-  print sys.argv[1]
 
 
 #count lines, so we know the last ones to pull..
