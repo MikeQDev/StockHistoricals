@@ -12,3 +12,6 @@ Python
 1. Use symbolRetrieve.py to retreive a text-based list of stock tickers (given companylist.csv) **Write output to disk (python stockscrape.py [...] > tickers)
 2. Use stockscrape.py to gather current and historical prices. **Write output to disk (python stockscrape.py [...] > prices)
 3. Use analyzer.py to parse through stockscrape.py output - this will give ratio to base predictions on
+4. Use graph-scraper.py to get graphs for analysis (Added 1/11/2017)
+
+Or... execute example.sh (Added 1/11/2017)
